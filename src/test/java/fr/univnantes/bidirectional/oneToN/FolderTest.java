@@ -5,11 +5,20 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.Assert.*;
 
-public class FolderTest {
+/**
+ * Test class to check the proper functionality of the Folder class, and the association Folder --> Files.
+ *
+ * @author Glenn Plouhinec
+ * @version 0.1
+ */
+class FolderTest {
 
     private Folder myFolder;
     private File file1, file2, file3;
 
+    /**
+     * Initializes the folder and files.
+     */
     @BeforeEach
     void setup() {
         myFolder = new Folder("myFolder");
@@ -19,6 +28,9 @@ public class FolderTest {
         file3 = new File("file3", 20);
     }
 
+    /**
+     * Adds a single file to the folder.
+     */
     @Test
     void addFileTest() {
         myFolder.addFile(file1);
@@ -26,6 +38,9 @@ public class FolderTest {
         assertSame(file1.getFolder().getFolder(), myFolder);
     }
 
+    /**
+     * Adds many files to the folder. Checks that files are added correctly.
+     */
     @Test
     void addManyFilesTest() {
         myFolder.addFile(file1);
@@ -43,6 +58,9 @@ public class FolderTest {
         assertSame(file3.getFolder().getFolder(), myFolder);
     }
 
+    /**
+     * Removes a single file from the folder.
+     */
     @Test
     void removeFileTest() {
         myFolder.addFile(file1);
@@ -52,6 +70,9 @@ public class FolderTest {
         assertTrue(myFolder.getFiles().getFiles().isEmpty());
     }
 
+    /**
+     * Removes many files from the folder. Checks that the files are removed correctly.
+     */
     @Test
     void removeManyFilesTest() {
         myFolder.addFile(file1);
@@ -73,6 +94,4 @@ public class FolderTest {
 
         assertTrue(myFolder.getFiles().getFiles().isEmpty());
     }
-
-
 }

@@ -5,11 +5,20 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.Assert.*;
 
+/**
+ * Test class to check the proper functionality of the File class, and the association File --> Folder.
+ *
+ * @author Glenn Plouhinec
+ * @version 0.1
+ */
 class FileTest {
 
     private Folder principalFolder, secondFolder;
     private File myFile;
 
+    /**
+     * Initializes the file and folders.
+     */
     @BeforeEach
     void setup() {
         principalFolder = new Folder("principalFolder");
@@ -18,6 +27,9 @@ class FileTest {
         myFile = new File("myFile", 15);
     }
 
+    /**
+     * Checks that the folder reference is set up correctly.
+     */
     @Test
     void setFolderTest() {
         myFile.setFolder(principalFolder);
@@ -30,10 +42,13 @@ class FileTest {
         assertTrue(principalFolder.getFiles().getFiles().isEmpty());
     }
 
+    /**
+     * Checks that the folder reference is removed correctly.
+     */
     @Test
-    void removeFolderTest() {
+    void unsetFolderTest() {
         myFile.setFolder(principalFolder);
-        myFile.removeFolder();
+        myFile.unsetFolder();
         assertFalse(myFile.getFolder().isSet());
         assertTrue(principalFolder.getFiles().getFiles().isEmpty());
     }
