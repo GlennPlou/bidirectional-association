@@ -15,12 +15,12 @@ public class FolderReferenceToFiles {
     /**
      * The list of files that belong to the directory.
      */
-    private List<File> files = new ArrayList<File>();
+    private final List<File> files = new ArrayList<File>();
 
     /**
      * The folder we are managing.
      */
-    private Folder folder;
+    private final Folder folder;
 
     /**
      * Constructor of FolderReferenceToFiles. Initializes the folder we are managing.
@@ -62,7 +62,7 @@ public class FolderReferenceToFiles {
     /**
      * Add a new file to the files references by unset the old folder reference of the file if necessary, and using the
      * "basicAdd/Set" functions (notion and important order in this bi-directional association model).
-     * @param file
+     * @param file the file to add.
      */
     public void add(File file) {
         if (file.getFolder().isSet()) {

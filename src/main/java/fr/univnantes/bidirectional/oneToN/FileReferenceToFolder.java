@@ -17,7 +17,7 @@ public class FileReferenceToFolder {
     /**
      * The file we are managing.
      */
-    private File file;
+    private final File file;
 
     /**
      * Constructor of FileReferenceToFolder. Initializes the file we are managing.
