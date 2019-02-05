@@ -68,9 +68,11 @@ public class CourseTest {
         assertTrue(student1.getCourses().getCourses().contains(myCourseA));
         assertTrue(student1.getCourses().getCourses().contains(myCourseB));
         assertEquals(2, student1.getCourses().getCourses().size());
+
         assertTrue(student2.getCourses().getCourses().contains(myCourseA));
         assertTrue(student2.getCourses().getCourses().contains(myCourseB));
         assertEquals(2, student2.getCourses().getCourses().size());
+
         assertTrue(student3.getCourses().getCourses().contains(myCourseA));
         assertTrue(student3.getCourses().getCourses().contains(myCourseB));
         assertEquals(2, student3.getCourses().getCourses().size());
