@@ -17,11 +17,20 @@ public class OneToMany<T extends BidirectionalReference, U extends Bidirectional
 
     @Override
     public void remove(U element) {
-
+        if (element.getReference().getU() == this.t) {
+            if (element.getReference().isSet()) {
+                element.getReference().basicUnset();
+            }
+            this.basicRemove(element);
+        }
     }
 
     @Override
     public void add(U element) {
-
+        if (element.getReference().isSet()) {
+            element.getReference().unset();
+        }
+        element.getReference().basicSet(this.t);
+        this.basicAdd(element);
     }
 }

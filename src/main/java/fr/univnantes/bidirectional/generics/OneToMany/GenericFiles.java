@@ -22,4 +22,8 @@ public class GenericFiles implements BidirectionalReference {
     public void unsetFolder() {
         this.folder.unset();
     }
+
+    public GenericFolder getFolder() {
+        return this.folder.getU();
+    }
 }

@@ -11,11 +11,18 @@ public class ManyToOne<T extends BidirectionalReference, U extends Bidirectional
 
     @Override
     public void unset() {
-
+        if (this.isSet()) {
+            this.u.getReference().basicRemove(this.t);
+            this.basicUnset();
+        }
     }
 
     @Override
     public void set(U element) {
-
+        if (this.isSet()) {
+            this.unset();
+        }
+        element.getReference().basicAdd(this.t);
+        this.basicSet(element);
     }
 }

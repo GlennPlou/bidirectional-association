@@ -4,6 +4,7 @@ import fr.univnantes.bidirectional.generics.BidirectionalAssociation;
 import fr.univnantes.bidirectional.generics.BidirectionalReference;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class GenericFolder implements BidirectionalReference {
 
@@ -23,5 +24,9 @@ public class GenericFolder implements BidirectionalReference {
 
     public void removeFile(GenericFiles file) {
         this.files.remove(file);
+    }
+
+    public List<GenericFiles> getFiles() {
+        return this.files.getList();
     }
 }
