@@ -34,16 +34,12 @@ public abstract class SingleAssociation<T extends BidirectionalReference, U exte
         return this.u;
     }
 
-    public T getT() {
-        return this.t;
-    }
+    public final void basicAdd(U element) {}
+    public final void basicRemove(U element) {}
+    public final void remove(U element) {}
+    public final void add(U element) {}
 
-    public void basicAdd(U element) {}
-    public void basicRemove(U element) {}
-    public void remove(U element) {}
-    public void add(U element) {}
-
-    public List<U> getList() {
+    public final List<U> getList() {
         return null;
     }
 }
