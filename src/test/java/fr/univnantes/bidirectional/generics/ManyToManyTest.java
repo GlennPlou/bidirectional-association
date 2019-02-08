@@ -137,7 +137,74 @@ public class ManyToManyTest {
         course1.addStudent(student3);
 
         course1.removeStudent(student1);
+
+        assertFalse(course1.getStudents().contains(student1));
+        assertTrue(course1.getStudents().contains(student2));
+        assertTrue(course1.getStudents().contains(student3));
+        assertEquals(2, course1.getStudents().size());
+        assertTrue(student1.getCourses().isEmpty());
+        assertTrue(student2.getCourses().contains(course1));
+        assertTrue(student3.getCourses().contains(course1));
+
+
         course1.removeStudent(student2);
+
+        assertFalse(course1.getStudents().contains(student2));
+        assertTrue(course1.getStudents().contains(student3));
+        assertEquals(1, course1.getStudents().size());
+        assertTrue(student1.getCourses().isEmpty());
+        assertTrue(student2.getCourses().isEmpty());
+        assertTrue(student3.getCourses().contains(course1));
+
         course1.removeStudent(student3);
+
+        assertFalse(course1.getStudents().contains(student3));
+        assertTrue(course1.getStudents().isEmpty());
+        assertTrue(student1.getCourses().isEmpty());
+        assertTrue(student2.getCourses().isEmpty());
+        assertTrue(student3.getCourses().isEmpty());
+    }
+
+    @Test
+    void removeCourseTest() {
+        student1.addCourse(course1);
+        student1.removeCourse(course1);
+
+        assertTrue(student1.getCourses().isEmpty());
+        assertTrue(course1.getStudents().isEmpty());
+    }
+
+    @Test
+    void removeManyCoursesTest() {
+        student1.addCourse(course1);
+        student1.addCourse(course2);
+        student1.addCourse(course3);
+
+        student1.removeCourse(course1);
+
+        assertFalse(student1.getCourses().contains(course1));
+        assertTrue(student1.getCourses().contains(course2));
+        assertTrue(student1.getCourses().contains(course3));
+        assertEquals(2, student1.getCourses().size());
+        assertTrue(course1.getStudents().isEmpty());
+        assertTrue(course2.getStudents().contains(student1));
+        assertTrue(course3.getStudents().contains(student1));
+
+        student1.removeCourse(course2);
+
+        assertFalse(student1.getCourses().contains(course2));
+        assertTrue(student1.getCourses().contains(course3));
+        assertEquals(1, student1.getCourses().size());
+        assertTrue(course1.getStudents().isEmpty());
+        assertTrue(course2.getStudents().isEmpty());
+        assertTrue(course3.getStudents().contains(student1));
+
+        student1.removeCourse(course3);
+
+        assertFalse(student1.getCourses().contains(course3));
+        assertTrue(student1.getCourses().isEmpty());
+        assertTrue(course1.getStudents().isEmpty());
+        assertTrue(course2.getStudents().isEmpty());
+        assertTrue(course3.getStudents().isEmpty());
     }
 }

@@ -109,7 +109,7 @@ public class OneToManyTest {
         assertSame(folder1, file2.getFolder());
         assertSame(folder1, file3.getFolder());
 
-        assertSame(file1, folder1.getFiles().get(0)); //Depends on the type of List used.
+        assertSame(file1, folder1.getFiles().get(0)); //Depends on the type of List used ?
         assertSame(file2, folder1.getFiles().get(1));
         assertSame(file3, folder1.getFiles().get(2));
     }
