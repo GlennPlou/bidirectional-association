@@ -35,7 +35,7 @@ class Task {
 
     /**
      * Set the new event of this task, using the event reference.
-     * @param event
+     * @param event the new event.
      */
     void setEvent(Event event) {
         this.event.set(event);

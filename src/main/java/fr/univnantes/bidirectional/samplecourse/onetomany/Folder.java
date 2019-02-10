@@ -51,7 +51,7 @@ class Folder {
 
     /**
      * Removes the reference to a file.
-     * @param file the file (reference) to remove.
+     * @param file the file to remove.
      */
     void removeFile(File file) {
         this.files.remove(file);

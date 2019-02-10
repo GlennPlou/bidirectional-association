@@ -60,7 +60,7 @@ class FolderReferenceToFiles {
     }
 
     /**
-     * Add a new file to the files references by unset the old folder reference of the file if necessary, and using the
+     * Add a new file to the files reference by unset the old folder reference of the file if necessary, and using the
      * "basicAdd/Set" functions (notion and important order in this bi-directional association model).
      * @param file the file to add.
      */
@@ -75,7 +75,7 @@ class FolderReferenceToFiles {
     }
 
     /**
-     * SReturns the list of files associated to the folder.
+     * Returns the list of files associated to the folder.
      * @return this.files
      */
     List<File> getFiles() {

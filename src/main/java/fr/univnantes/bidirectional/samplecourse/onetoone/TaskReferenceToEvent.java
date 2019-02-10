@@ -63,7 +63,7 @@ class TaskReferenceToEvent {
     /**
      * Set the new event reference by breaking old association if necessary, and using the "basicAdd/Set" functions,
      * (notion and important order in this bi-directional association model).
-     * @param event
+     * @param event the new event.
      */
     void set(Event event) {
         if (event.getTask().isSet()) {
