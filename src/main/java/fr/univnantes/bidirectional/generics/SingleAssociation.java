@@ -42,6 +42,7 @@ public abstract class SingleAssociation<U extends BidirectionalReference> implem
 
     /**
      * {@inheritDoc}
+     * @see BidirectionalAssociation
      */
     public boolean isSet() {
         return this.u != null;
@@ -49,6 +50,7 @@ public abstract class SingleAssociation<U extends BidirectionalReference> implem
 
     /**
      * {@inheritDoc}
+     * @see BidirectionalAssociation
      */
     public void basicSet(U element) {
         this.u = element;
@@ -56,6 +58,7 @@ public abstract class SingleAssociation<U extends BidirectionalReference> implem
 
     /**
      * {@inheritDoc}
+     * @see BidirectionalAssociation
      */
     public void basicUnset() {
         this.u = null;
@@ -63,16 +66,19 @@ public abstract class SingleAssociation<U extends BidirectionalReference> implem
 
     /**
      * {@inheritDoc}
+     * @see BidirectionalAssociation
      */
     public abstract void unset();
 
     /**
      * {@inheritDoc}
+     * @see BidirectionalAssociation
      */
     public abstract void set(U element);
 
     /**
      * {@inheritDoc}
+     * @see BidirectionalAssociation
      */
     public U getU() {
         return this.u;
@@ -80,26 +86,31 @@ public abstract class SingleAssociation<U extends BidirectionalReference> implem
 
     /**
      * {@inheritDoc}
+     * @see BidirectionalAssociation
      */
     public final void basicAdd(U element) {}
 
     /**
      * {@inheritDoc}
+     * @see BidirectionalAssociation
      */
     public final void basicRemove(U element) {}
 
     /**
      * {@inheritDoc}
+     * @see BidirectionalAssociation
      */
     public final void remove(U element) {}
 
     /**
      * {@inheritDoc}
+     * @see BidirectionalAssociation
      */
     public final void add(U element) {}
 
     /**
      * {@inheritDoc}
+     * @see BidirectionalAssociation
      */
     public final List<U> getList() {
         return null;

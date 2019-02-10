@@ -48,9 +48,8 @@ public abstract class ManyAssociation<U extends BidirectionalReference> implemen
      *
      * @param element the element we want to manage.
      * @param newList the new list to use. Only the type is using.
-     * @param <E> the type of List that will be used.
      */
-    protected <E extends List<U>> ManyAssociation(BidirectionalReference element, E newList) {
+    protected ManyAssociation(BidirectionalReference element, List<U> newList) {
         this.t = element;
         if (!newList.isEmpty()) {
             newList.clear();
@@ -60,6 +59,7 @@ public abstract class ManyAssociation<U extends BidirectionalReference> implemen
 
     /**
      * {@inheritDoc}
+     * @see BidirectionalAssociation
      */
     public void basicAdd(U element) {
         this.uList.add(element);
@@ -67,6 +67,7 @@ public abstract class ManyAssociation<U extends BidirectionalReference> implemen
 
     /**
      * {@inheritDoc}
+     * @see BidirectionalAssociation
      */
     public void basicRemove(U element) {
         this.uList.remove(element);
@@ -74,16 +75,19 @@ public abstract class ManyAssociation<U extends BidirectionalReference> implemen
 
     /**
      * {@inheritDoc}
+     * @see BidirectionalAssociation
      */
     public abstract void remove(U element);
 
     /**
      * {@inheritDoc}
+     * @see BidirectionalAssociation
      */
     public abstract void add(U element);
 
     /**
      * {@inheritDoc}
+     * @see BidirectionalAssociation
      */
     public List<U> getList() {
         return this.uList;
@@ -91,6 +95,7 @@ public abstract class ManyAssociation<U extends BidirectionalReference> implemen
 
     /**
      * {@inheritDoc}
+     * @see BidirectionalAssociation
      */
     public final boolean isSet() {
         return false;
@@ -98,26 +103,31 @@ public abstract class ManyAssociation<U extends BidirectionalReference> implemen
 
     /**
      * {@inheritDoc}
+     * @see BidirectionalAssociation
      */
     public final void basicSet(U element) {}
 
     /**
      * {@inheritDoc}
+     * @see BidirectionalAssociation
      */
     public final void basicUnset() {}
 
     /**
      * {@inheritDoc}
+     * @see BidirectionalAssociation
      */
     public final void unset() {}
 
     /**
      * {@inheritDoc}
+     * @see BidirectionalAssociation
      */
     public final void set(U element) {}
 
     /**
      * {@inheritDoc}
+     * @see BidirectionalAssociation
      */
     public final U getU() {
         return null;
