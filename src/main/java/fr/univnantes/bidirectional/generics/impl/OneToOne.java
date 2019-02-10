@@ -3,9 +3,9 @@ package fr.univnantes.bidirectional.generics.impl;
 import fr.univnantes.bidirectional.generics.BidirectionalReference;
 import fr.univnantes.bidirectional.generics.SingleAssociation;
 
-public class OneToOne<T extends BidirectionalReference, U extends BidirectionalReference> extends SingleAssociation<T, U> {
+public class OneToOne<U extends BidirectionalReference> extends SingleAssociation<U> {
 
-    public OneToOne(T element) {
+    public OneToOne(BidirectionalReference element) {
         super(element);
     }
 

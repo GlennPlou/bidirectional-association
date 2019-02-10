@@ -2,15 +2,15 @@ package fr.univnantes.bidirectional.generics;
 
 import java.util.List;
 
-public abstract class SingleAssociation<T extends BidirectionalReference, U extends BidirectionalReference> implements BidirectionalAssociation<T, U> {
-    protected T t;
+public abstract class SingleAssociation<U extends BidirectionalReference> implements BidirectionalAssociation<U> {
+    protected BidirectionalReference t;
     protected U u;
 
     protected SingleAssociation() {
 
     }
 
-    protected SingleAssociation(T element) {
+    protected SingleAssociation(BidirectionalReference element) {
         this.t = element;
     }
 

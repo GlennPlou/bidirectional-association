@@ -5,13 +5,13 @@ import fr.univnantes.bidirectional.generics.ManyAssociation;
 
 import java.util.List;
 
-public class ManyToMany<T extends BidirectionalReference, U extends BidirectionalReference> extends ManyAssociation<T, U> {
+public class ManyToMany<U extends BidirectionalReference> extends ManyAssociation<U> {
 
-    public ManyToMany(T element) {
+    public ManyToMany(BidirectionalReference element) {
         super(element);
     }
 
-    public <E extends List<U>> ManyToMany(T element, E list) {
+    public <E extends List<U>> ManyToMany(BidirectionalReference element, E list) {
         super(element, list);
     }
 

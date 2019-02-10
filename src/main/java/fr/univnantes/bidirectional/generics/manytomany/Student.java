@@ -2,16 +2,17 @@ package fr.univnantes.bidirectional.generics.manytomany;
 
 import fr.univnantes.bidirectional.generics.BidirectionalAssociation;
 import fr.univnantes.bidirectional.generics.BidirectionalReference;
+import fr.univnantes.bidirectional.generics.ManyAssociation;
 import fr.univnantes.bidirectional.generics.impl.ManyToMany;
 
 import java.util.List;
 
 class Student implements BidirectionalReference  {
 
-    private final BidirectionalAssociation<Student, Course> courses;
+    private final ManyAssociation<Course> courses;
 
     Student() {
-        courses = new ManyToMany<Student, Course>(this);
+        courses = new ManyToMany<Course>(this);
     }
 
     public BidirectionalAssociation getReference() {

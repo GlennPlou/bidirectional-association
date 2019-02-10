@@ -5,10 +5,10 @@ import fr.univnantes.bidirectional.generics.BidirectionalReference;
 import fr.univnantes.bidirectional.generics.impl.OneToOne;
 
 class Event implements BidirectionalReference {
-    private final BidirectionalAssociation<Event, Task> task;
+    private final BidirectionalAssociation<Task> task;
 
     Event() {
-        task = new OneToOne<Event, Task>(this);
+        task = new OneToOne<Task>(this);
     }
 
     public BidirectionalAssociation getReference() {

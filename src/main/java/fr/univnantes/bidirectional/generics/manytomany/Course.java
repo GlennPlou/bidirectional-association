@@ -9,10 +9,10 @@ import java.util.List;
 
 class Course implements BidirectionalReference {
 
-    private final BidirectionalAssociation<Course, Student> students;
+    private final BidirectionalAssociation<Student> students;
 
     Course() {
-        students = new ManyToMany<Course, Student>(this, new ArrayList<Student>());
+        students = new ManyToMany<Student>(this, new ArrayList<Student>());
     }
 
     public BidirectionalAssociation getReference() {

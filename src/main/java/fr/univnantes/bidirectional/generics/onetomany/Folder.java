@@ -2,20 +2,21 @@ package fr.univnantes.bidirectional.generics.onetomany;
 
 import fr.univnantes.bidirectional.generics.BidirectionalAssociation;
 import fr.univnantes.bidirectional.generics.BidirectionalReference;
+import fr.univnantes.bidirectional.generics.ManyAssociation;
 import fr.univnantes.bidirectional.generics.impl.OneToMany;
 
 import java.util.List;
 
 class Folder implements BidirectionalReference {
 
-    private final BidirectionalAssociation<Folder, File> files;
+    private final ManyAssociation<File> files;
 
     Folder() {
-        this.files = new OneToMany<Folder, File>(this);
+        this.files = new OneToMany<File>(this);
     }
 
     Folder(List<File> files) {
-        this.files = new OneToMany<Folder, File>(this, files);
+        this.files = new OneToMany<File>(this, files);
     }
 
     public BidirectionalAssociation getReference() {

@@ -2,7 +2,7 @@ package fr.univnantes.bidirectional.generics;
 
 import java.util.List;
 
-public interface BidirectionalAssociation<T extends BidirectionalReference, U extends BidirectionalReference> {
+public interface BidirectionalAssociation<U extends BidirectionalReference> {
 
     boolean isSet();
     void basicSet(U element);

@@ -3,20 +3,20 @@ package fr.univnantes.bidirectional.generics;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class ManyAssociation<T extends BidirectionalReference, U extends BidirectionalReference> implements BidirectionalAssociation<T, U> {
-    protected T t;
+public abstract class ManyAssociation<U extends BidirectionalReference> implements BidirectionalAssociation<U> {
+    protected BidirectionalReference t;
     private List<U> uList;
 
     protected ManyAssociation() {
 
     }
 
-    protected ManyAssociation(T element) {
+    protected ManyAssociation(BidirectionalReference element) {
         this.t = element;
         this.uList = new ArrayList<U>();
     }
 
-    protected <E extends List<U>> ManyAssociation(T element, E newList) {
+    protected <E extends List<U>> ManyAssociation(BidirectionalReference element, E newList) {
         this.t = element;
         if (!newList.isEmpty()) {
             newList.clear();

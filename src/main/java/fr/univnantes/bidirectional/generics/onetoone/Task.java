@@ -2,13 +2,14 @@ package fr.univnantes.bidirectional.generics.onetoone;
 
 import fr.univnantes.bidirectional.generics.BidirectionalAssociation;
 import fr.univnantes.bidirectional.generics.BidirectionalReference;
+import fr.univnantes.bidirectional.generics.SingleAssociation;
 import fr.univnantes.bidirectional.generics.impl.OneToOne;
 
 class Task implements BidirectionalReference {
-    private final BidirectionalAssociation<Task, Event> event;
+    private final SingleAssociation<Event> event;
 
     Task() {
-        event = new OneToOne<Task, Event>(this);
+        event = new OneToOne<Event>(this);
     }
 
     public BidirectionalAssociation getReference() {
