@@ -10,7 +10,7 @@ package fr.univnantes.bidirectional.samplecourse.onetomany;
 class FileReferenceToFolder {
 
     /**
-     * The folder to which the file belongs.
+     * The folder that belongs to the file we are managing.
      */
     private Folder folder;
 
@@ -51,7 +51,7 @@ class FileReferenceToFolder {
     }
 
     /**
-     * Breaks the association Folder --> File and then File --> Folder.
+     * Breaks the association Folder --> (old) File and then File --> Folder.
      */
     void unset() {
         if (this.isSet()) {
@@ -61,7 +61,7 @@ class FileReferenceToFolder {
     }
 
     /**
-     * Set the new folder reference by breaking old association if necessary, and using the "basicAdd/Set" functions
+     * Set the new folder reference by breaking old association if necessary, and using the "basicAdd/Set" functions,
      * (notion and important order in this bi-directional association model).
      * @param folder the new Folder.
      */
@@ -74,7 +74,7 @@ class FileReferenceToFolder {
     }
 
     /**
-     * Some useless getter for testing.
+     * Returns the folder associated to the file.
      * @return this.folder.
      */
     Folder getFolder() {

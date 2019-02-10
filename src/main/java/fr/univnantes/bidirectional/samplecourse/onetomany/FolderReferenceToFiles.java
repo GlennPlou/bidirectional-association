@@ -13,7 +13,7 @@ import java.util.List;
 class FolderReferenceToFiles {
 
     /**
-     * The list of files that belong to the directory.
+     * The list of files that belong to the directory we are managing.
      */
     private final List<File> files = new ArrayList<File>();
 
@@ -75,7 +75,7 @@ class FolderReferenceToFiles {
     }
 
     /**
-     * Some useless getter for testing.
+     * SReturns the list of files associated to the folder.
      * @return this.files
      */
     List<File> getFiles() {

@@ -13,6 +13,7 @@ import lombok.Setter;
 @Getter
 @Setter
 class File {
+
     /**
      * The name of this file.
      */
